@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Finished Inventory Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <section class="card" id="passwordGate">
+        <header>
+            <h1>Finished Inventory Converter</h1>
+            <p>This tool is restricted. Enter the password to continue.</p>
+        </header>
+        <form id="gateForm">
+            <label class="field">
+                <span>Password</span>
+                <input type="password" id="gatePassword" autocomplete="current-password" required />
+            </label>
+            <button type="submit">Enter</button>
+        </form>
+        <p id="gateError" class="error-text" role="alert" aria-live="assertive"></p>
+    </section>
+
+    <main class="card" id="appContent" hidden>
+        <header>
+            <h1>Finished Inventory Converter</h1>
+            <p>Upload the raw Visual FoxPro export and download finished file.</p>
+        </header>
+        <form id="uploadForm">
+            <label class="field">
+                <span>Raw inventory file (.xls or .xlsx)</span>
+                <input type="file" name="file" accept=".xls,.xlsx" required />
+            </label>
+            <button type="submit" id="submitBtn">Generate Finished File</button>
+        </form>
+        <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
